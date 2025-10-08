@@ -1,133 +1,156 @@
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=League+Spartan:wght@400;700&display=swap');
 
-/* --- Background --- */
+:root {
+  --mcm-darkindigo: #363664;       /* Dark Text / Primary Border */
+  --mcm-deeporange: #D1452B;       /* Primary Action Color */
+  --mcm-lightorange: #F06623;      /* Secondary Accent / Shadow */
+  --mcm-neonpink: #ED4175;         /* Unused but available */
+  --mcm-eggshell: #EFE6D3;         /* Item Background */
+  --mcm-white: #fff;               /* Clean Base */
+}
+
+/* --- Background: Subtle Atomic Pattern --- */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
+  /* Uses Eggshell and Light Orange for the pattern */
   background:
     repeating-linear-gradient(
-      45deg,
-      #fff 0 25px,
-      #f8b9c1 25px 50px
+      135deg,
+      var(--mcm-eggshell) 0 25px,
+      var(--mcm-lightorange) 25px 30px, /* Thin Light Orange Line */
+      var(--mcm-eggshell) 30px 55px 
     ),
-    linear-gradient(to bottom, #9ad9ea 0%, #fdf2f2 100%);
-  opacity: 0.3;
+    linear-gradient(to bottom, #d6e4e8 0%, var(--mcm-white) 100%); 
+  opacity: 0.5;
   z-index: -1;
 }
 
-/* --- Cart Container --- */
+/* --- Cart Container: Clean, Sculptural Form --- */
 .cart-page {
   max-width: 950px;
-  margin: 50px auto;
-  padding: 40px;
-  background: linear-gradient(145deg, #fef9f9, #ffe3ea);
-  border: 6px double #ed4175;
-  border-radius: 30px;
-  box-shadow: 0 10px 0 #00bcd4, 0 20px 30px rgba(0, 0, 0, 0.3);
+  margin: 70px auto; 
+  padding: 50px; 
+  background: var(--mcm-white); 
+  border: double 10px var(--mcm-darkindigo); /* Double Dark Indigo Border */
+  border-radius: 10px; 
+  box-shadow: 
+    0 5px 15px rgba(0, 0, 0, 0.1),
+    0 20px 40px rgba(0, 0, 0, 0.05);
   font-family: 'League Spartan', sans-serif;
-  color: #222;
+  color: var(--mcm-darkindigo); /* Dark Indigo text */
   position: relative;
 }
 
-/* --- Title --- */
+/* --- Title: Strong, Simple Typography --- */
 .cart-page h1 {
   text-align: center;
-  font-family: 'League Spartan', sans-serif; /* optional: apply your font */
-  color: #ed4175;
-  font-size: 3rem;
-  margin-bottom: 25px;
-  letter-spacing: 2px;
+  font-family: 'League Spartan', sans-serif;
+  font-weight: 500;
+  color: var(--mcm-darkindigo); 
+  font-size: 3.2rem;
+  margin-bottom: 40px;
+  letter-spacing: 0; 
+  /* Simple, clean separator bar in Deep Orange */
+  border-bottom: 4px solid var(--mcm-deeporange);
+  padding-bottom: 10px;
+  width: 70%;
+  margin: 0 auto 40px auto;
 }
 
-/* --- Cart Items --- */
+/* --- Cart Items: Clean, Divided Sections --- */
 .cart-items {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 25px;
 }
 
 .cart-item {
   display: flex;
   align-items: center;
-  background: #fff8f0;
-  border-radius: 20px;
+  background: var(--mcm-eggshell); /* Eggshell background */
+  border-radius: 10px;
   padding: 20px;
-  border: 3px solid #ed4175;
-  /* box-shadow: 6px 6px 0 #00bcd4; */
-  transition: transform 0.2s ease-in-out;
+  border: none;
+  /* Simple, bottom-only shadow in Light Orange */
+  box-shadow: 0 4px 0 var(--mcm-lightorange); 
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s;
 }
 
 .cart-item:hover {
-  transform: translateY(-4px);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 var(--mcm-lightorange);
 }
 
 .cart-img {
   width: 100px;
   height: 100px;
   object-fit: cover;
-  border: 3px solid #00bcd4;
-  border-radius: 15px;
-  background: #fff;
+  border: 4px solid var(--mcm-darkindigo); /* Dark Indigo Border */
+  border-radius: 5px; 
+  background: var(--mcm-white);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .cart-details {
   flex: 1;
-  margin-left: 20px;
+  margin-left: 25px;
 }
 
 .cart-details h3 {
-  font-family: 'League Spartan', sans-serif; /* optional: apply your font */
-  color: #ed4175;
+  font-family: 'League Spartan', sans-serif; 
+  color: var(--mcm-deeporange); /* Deep Orange Title */
   margin: 0;
-  font-size: 1.4rem;
-  text-shadow: 1px 1px 0 #fff;
+  font-size: 1.6rem;
+  text-shadow: none;
 }
 
 .cart-details p {
-  color: #444;
-  margin: 6px 0;
-  font-weight: 600;
+  color: var(--mcm-darkindigo);
+  margin: 5px 0;
+  font-weight: 700;
 }
 
-/* --- Quantity --- */
+/* --- Quantity: Minimalist Controls --- */
 .cart-quantity {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
 }
 
 .cart-quantity button {
-  background: #00bcd4;
-  border: none;
-  color: #fff;
-  padding: 6px 12px;
-  border-radius: 10px;
-  font-size: 1.2rem;
+  background: var(--mcm-lightorange); /* Light Orange Button */
+  border: 2px solid var(--mcm-darkindigo);
+  color: var(--mcm-darkindigo);
+  padding: 8px 14px;
+  border-radius: 5px; 
+  font-size: 1.1rem;
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
-  box-shadow: 2px 2px 0 #ed4175;
+  box-shadow: none;
 }
 
 .cart-quantity button:hover {
-  background: #ed4175;
-  box-shadow: 2px 2px 0 #00bcd4;
+  background: var(--mcm-deeporange); /* Hover to Deep Orange */
+  color: var(--mcm-white);
+  border-color: var(--mcm-deeporange);
 }
 
 /* --- Remove Button --- */
 .remove-btn {
   background: none;
   border: none;
-  color: #ed4175;
-  font-size: 1.6rem;
+  color: var(--mcm-lightorange); /* Light Orange icon */
+  font-size: 2rem;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .remove-btn:hover {
-  transform: scale(1.2) rotate(5deg);
-  color: #00bcd4;
+  transform: scale(1.1) rotate(0deg); 
+  color: var(--mcm-deeporange);
 }
 
 /* --- Promo Section --- */
@@ -135,115 +158,136 @@ body::before {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 25px auto;
-  gap: 10px;
+  margin: 50px auto 15px auto; 
+  gap: 20px;
 }
 
 .promo-icon {
-  color: #ed4175;
-  font-size: 1.8rem;
+  color: var(--mcm-deeporange); /* Deep Orange icon */
+  text-shadow: none;
+  font-size: 2.5rem;
 }
 
 .promo-section input {
-  padding: 12px 15px;
-  border: 3px solid #ed4175;
-  border-radius: 10px;
+  padding: 15px 20px; 
+  border: 2px solid var(--mcm-darkindigo);
+  border-radius: 15px; 
   font-family: 'League Spartan', sans-serif;
-  font-size: 1rem;
-  background: #fff;
-  color: #222;
-  width: 230px;
-  box-shadow: inset 2px 2px 0 #00bcd4;
+  font-size: 1.1rem;
+  background: var(--mcm-white);
+  color: var(--mcm-darkindigo);
+  width: 250px;
+  box-shadow: none;
+  transition: border-color 0.3s;
+}
+
+.promo-section input:focus {
+  outline: none;
+  border-color: var(--mcm-deeporange); 
 }
 
 .apply-btn {
-  background: #ed4175;
-  color: #fff;
-  border: 3px solid #fff;
-  padding: 10px 20px;
-  border-radius: 50px;
+  background: var(--mcm-deeporange); /* Deep Orange button */
+  color: var(--mcm-white);
+  border: 2px solid var(--mcm-darkindigo); 
+  padding: 14px 30px;
+  border-radius: 15px; 
   cursor: pointer;
-  font-family: 'League Spartan', sans-serif; /* optional: apply your font */
-  font-size: 1rem;
+  font-family: 'League Spartan', sans-serif; 
+  font-size: 1.2rem;
+  font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
-  transition: 0.3s ease;
-  box-shadow: 3px 3px 0 #00bcd4;
+  transition: all 0.2s ease-in-out;
 }
 
 .apply-btn:hover {
-  background: #00bcd4;
-  color: #fff;
-  box-shadow: 3px 3px 0 #ed4175;
+  background: var(--mcm-darkindigo); 
+  color: var(--mcm-white);
+  box-shadow: 4px 4px 0 var(--mcm-deeporange); 
 }
 
 .promo-message {
   text-align: center;
   font-size: 1.1rem;
-  margin-top: 10px;
-  color: #ed4175;
+  margin-top: 15px;
+  color: var(--mcm-deeporange);
   font-family: 'League Spartan', sans-serif;
-  text-shadow: 1px 1px 0 #fff;
+  text-shadow: none;
+  font-weight: 700;
 }
 
-/* --- Summary --- */
+/* --- Summary: Clean and Structured --- */
 .cart-summary {
-  text-align: center;
-  margin-top: 40px;
-  border-top: 4px dashed #00bcd4;
-  padding-top: 20px;
+  text-align: right; 
+  margin-top: 50px;
+  border-top: 3px dashed var(--mcm-darkindigo); /* Dark Indigo separator line */
+  padding-top: 25px;
+}
+
+.cart-summary h3 {
+  color: var(--mcm-darkindigo);
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 5px;
 }
 
 .cart-summary h2 {
-  color: #ed4175;
-  font-family: 'League Spartan', sans-serif; /* optional: apply your font */
-  font-size: 2rem;
+  color: var(--mcm-lightorange); /* Total highlighted in Light Orange */
+  font-family: 'League Spartan', sans-serif;
+  font-size: 2.8rem;
+  margin-top: 15px;
 }
 
 .discount-text {
-  color: #00bcd4;
-  font-weight: bold;
-  font-size: 1.1rem;
+  color: var(--mcm-deeporange);
+  font-weight: 700;
+  font-size: 1.2rem;
 }
 
-/* --- Buttons --- */
+/* --- Buttons: Clean, Bold Shapes --- */
 .checkout-btn, .clear-btn {
-  border: none;
-  padding: 14px 28px;
-  border-radius: 50px;
-  font-weight: bold;
+  border: 3px solid var(--mcm-darkindigo); 
+  padding: 15px 30px;
+  border-radius: 5px; 
+  font-weight: 700;
   cursor: pointer;
-  margin: 10px;
-  font-size: 1.1rem;
+  margin: 25px 0 0 15px; 
+  font-size: 1.2rem;
   transition: 0.2s ease-in-out;
-  box-shadow: 4px 4px 0 #ed4175;
+  box-shadow: none;
   text-transform: uppercase;
+  font-family: 'League Spartan', sans-serif;
+  letter-spacing: 1px;
 }
 
 .checkout-btn {
-  background: #00bcd4;
-  color: #fff;
+  background: var(--mcm-deeporange); /* Deep Orange */
+  color: var(--mcm-white);
 }
 
 .clear-btn {
-  background: #ed4175;
-  color: #fff;
+  background: var(--mcm-darkindigo); /* Dark Indigo */
+  color: var(--mcm-white);
 }
 
 .checkout-btn:hover, .clear-btn:hover {
-  transform: translateY(-4px);
+  transform: translateY(0);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0.9;
 }
 
-/* --- Empty State --- */
+/* --- Empty State: Fun Pop of Color --- */
 .cart-empty {
   text-align: center;
-  background: linear-gradient(135deg, #ed4175, #ff80ab);
-  padding: 30px;
-  border-radius: 25px;
-  color: #fff;
+  background: var(--mcm-deeporange); /* Deep Orange background */
+  padding: 40px;
+  border-radius: 10px;
+  color: var(--mcm-white);
   font-family: 'Luckiest Guy', cursive;
-  font-size: 1.4rem;
-  text-shadow: 2px 2px 0 #00bcd4;
-  box-shadow: 6px 6px 0 #fff;
+  font-size: 1.8rem;
+  text-shadow: 2px 2px 0 var(--mcm-darkindigo);
+  box-shadow: 0 8px 0 var(--mcm-lightorange);
   margin-top: 100px;
 }
