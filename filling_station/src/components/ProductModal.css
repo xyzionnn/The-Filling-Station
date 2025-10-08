@@ -1,0 +1,147 @@
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex; justify-content: center; align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff8f0;
+  border: 4px solid #f06623;
+  border-radius: 20px;
+  box-shadow: 8px 8px #ed4175;
+  width: 90%;
+  max-width: 750px;
+  padding: 2rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  animation: popIn 0.3s ease;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px; right: 15px;
+  font-size: 1.2rem;
+  background: #ed4175;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.close-btn:hover { background: #f06623; }
+
+.modal-body {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.modal-img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 3px solid #f06623;
+  box-shadow: 5px 5px #ed4175;
+}
+
+.modal-details {
+  flex: 1;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.modal-details h2 {
+  color: #ed4175;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 0.4rem;
+}
+
+.modal-category {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+.modal-description {
+  color: #333;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.price-section {
+  margin-bottom: 1rem;
+}
+
+.modal-price {
+  font-family: 'Bangers', cursive;
+  font-size: 2rem;
+  color: #f04d4d;
+  text-shadow: 2px 2px #fff, 3px 3px #000;
+}
+
+.modal-stock {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.quantity-section {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 1rem 0;
+}
+
+.qty-btn {
+  background-color: #ed4175;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+}
+.qty-btn:hover { background-color: #f06623; }
+
+.qty-value {
+  font-size: 1.1rem;
+  min-width: 20px;
+  text-align: center;
+}
+
+.total-price {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 1.6rem;
+  color: #f04d4d;
+  margin-bottom: 1rem;
+}
+
+.order-btn {
+  background-color: #f06623;
+  width: 100%;
+  color: white;
+  border: 3px dashed #fff;
+  font-family: 'League Spartan', sans-serif;
+  padding: 0.8rem 1.6rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 3px 3px #ed4175;
+  transition: all 0.3s ease;
+}
+.order-btn:hover {
+  background-color: #ed4175;
+  transform: scale(1.05);
+  box-shadow: 4px 4px #f06623;
+}
+
+@keyframes popIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}

@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=League+Spartan&display=swap');
+
+
+.products-page {
+  background: repeating-linear-gradient(
+    45deg,
+    #ff7a7a,
+    #ff7a7a 10px,
+    rgb(249, 217, 217) 10px,
+    #fff7eb 20px
+  );
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.menu-wrapper {
+  background: #fffdf8;
+  border: 8px double #ed4175;
+  border-radius: 40px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  padding: 3rem 4rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.menu-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.menu-header h1 {
+  font-family: 'Gin and Soda', sans-serif;
+  font-size: 5.5rem;
+  color: #ed4175;
+  text-shadow: 4px 4px #271c66, 8px 8px #fff;
+}
+
+.menu-header p {
+  font-family: 'Inter', sans-serif;
+  color: #444;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.menu-divider {
+  width: 900px;
+  height: 6px;
+  background: repeating-linear-gradient(
+    90deg,
+    #ed4175,
+    #ed4175 20px,
+    #f06623 20px,
+    #f06623 40px
+  );
+  margin: 2rem auto;
+  border-radius: 5px;
+}
+
+/* Category Titles */
+.products-title {
+  font-family: 'Gin and Soda', sans-serif;
+  font-size: 4.5rem;
+  color: #f06623;
+  margin: 3rem 0 3.5rem;
+  text-align: center;
+  text-shadow: 2px 2px white, 4px 4px #ed4175;
+  border-bottom: 4px dashed #f06623;
+  padding-bottom: 2%;
+}
+
+/* Grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  justify-items: center;
+  align-items: start;
+  padding: 0 2rem;
+}
+
+/* Wrap the last two items (4 & 5) inside a flex container */
+.products-grid.last-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.products-grid.last-row {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Optional: add diner-style "House Specials" flair */
+.product-card.special {
+  background: #fff6f9;
+  border: 4px dashed #ed4175;
+  box-shadow: 8px 8px #f06623;
+  transform: rotate(-1deg);
+}
+
+.product-card.special:hover {
+  transform: rotate(0deg) scale(1.03);
+}
+
+.products-title {
+  position: relative;
+}
+
+.products-title::after {
+  content: "House Specials";
+  position: absolute;
+  right: 0;
+  bottom: -1.5rem;
+  font-family: 'Gin and Soda', sans-serif;
+  font-size: 1.2rem;
+  color: #ed4175;
+  transform: rotate(-3deg);
+}
+
+
+/* === 50s Retro Product Card Style === */
+
+.product-card {
+  background: #fff8f0;
+  border: 4px solid #f06623;
+  border-radius: 25px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 6px 6px 0 #ed4175;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-6px) rotate(-1deg);
+  box-shadow: 10px 10px 0 #f06623;
+}
+
+/* Image – keep consistent retro ratio */
+.product-card img {
+  width: 220px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 3px solid #ed4175;
+  margin-bottom: 1rem;
+  box-shadow: 4px 4px 0 #f06623;
+}
+
+/* Title */
+.product-card h2 {
+    font-family: 'League Spartan', sans-serif;
+  font-size: 1.8rem;
+  color: #ed4175;
+  margin-bottom: 0.4rem;
+}
+
+/* Description */
+.product-card p {
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+}
+
+/* Price */
+.product-card .product-price {
+font-family: 'League Spartan', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-align: center;
+  color: #f04d4d;
+  margin: 10px;
+}
+
+
+/* Retro “Order Now” Button */
+.order-btn {
+  background-color: #f06623;
+  color: #fff;
+  border: 3px dashed #fff;
+  font-family: 'Gin and Soda', sans-serif;
+  font-size: 1.1rem;
+  padding: 0.7rem 1.4rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 1px;
+  box-shadow: 4px 4px 0 #ed4175;
+}
+
+.order-btn:hover {
+  background-color: #ed4175;
+  transform: scale(1.08);
+  box-shadow: 5px 5px 0 #f06623;
+}
+

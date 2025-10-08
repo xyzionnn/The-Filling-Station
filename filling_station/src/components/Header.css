@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=League+Spartan:wght@100..900&display=swap');
+
+.header {
+  background-color: #e85d04;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 30px;
+  font-family: 'Poppins', sans-serif;
+  height: 20px;
+  
+}
+
+.spacing{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 100px;
+}
+
+.logo-navbar img {
+  height: auto;
+  width: 150px;
+}
+
+.nav {
+  display: flex;
+  gap: 50px;
+  font-weight: 500;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 18px;
+}
+
+.nav a:hover {
+  opacity: 0.8;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.cart {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.actions a{
+  color: white;
+  text-decoration: none;
+}
+
+.user-icon {
+  cursor: pointer;  
+  font-size: 25px;
+}

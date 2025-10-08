@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=League+Spartan:wght@100..900&display=swap');
+
+
+body{
+  font-family: 'Inter', 'League Spartan', sans-serif;
+}
+.site-footer {
+    background-color: #363664;
+    color: #eee;
+    padding: 2rem 1rem;
+    font-size: 0.9rem;
+  }
+ 
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+ 
+  .footer-section {
+    flex: 1;
+    margin: 1.5rem;
+    min-width: 100px;
+  }
+ 
+  .footer-section h4 {
+    font-size: 20px;
+    margin-bottom: 0.5rem;
+    color: #fff;
+  }
+ 
+  .footer-section a {
+    color: #ffffff;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 15px;
+    text-decoration: none;
+  }
+ 
+  .footer-section a:hover {
+    color: #fff;
+  }
+
+  
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-top: 15px;
+  margin-bottom: 25px;
+  font-size: 16px;
+  font-weight: 200;
+}
+
+.footer-section h4{
+  font-size: 24px;
+  font-weight: 400;
+}
+ 
+  .social-icons a {
+    margin-right: 0.5rem;
+  }
+ 
+  .footer-bottom {
+    margin-top: 2rem;
+    text-align: center;
+    border-top: 1px solid #ffffff;
+    padding-top: 1rem;
+    color: #ffffff;
+  }
+ 
+  p{
+    text-align: justify;
+    font-family: 'Inter', 'League Spartan', sans-serif;
+    font-weight: 200;
+    line-height: 1.3rem;
+  }
+
+.logo {
+  display: flex;
+  align-items: center; /* vertically centers text with image */
+  gap: 10px; /* adds space between image and text */
+}
+
+.logo img {
+  width: 50px;  /* adjust size as needed */
+  height: auto;
+}
+
+.logo p {
+  font-family: 'League Spartan', sans-serif; /* optional: apply your font */
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff; /* or whatever color fits your design */
+  margin: 0; /* remove default spacing */
+}
